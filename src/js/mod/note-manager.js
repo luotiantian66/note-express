@@ -131,12 +131,14 @@ var NoteManager = (function(){
 				if(ret.data == 0) {
 					Toast('未找到结果')
 				}
+				
 				$.each(ret.data, function(idx,article){
+					var createDate = article.createdAt.slice(0,4) + '年' + article.createdAt.slice(5,7) + '月' + article.createdAt.slice(8,10) + '日'
 					new Note({
 						id:article.id,
 						level: article.level,
 						context: article.text,
-						time: article.createdAt
+						time: createDate
 					})
 				})
 				Event.fire('waterfall');
@@ -153,11 +155,12 @@ var NoteManager = (function(){
 			if(ret.status == 0){
 				//console.log('success')
 				$.each(ret.data, function(idx,article){
+					var createDate = article.createdAt.slice(0,4) + '年' + article.createdAt.slice(5,7) + '月' + article.createdAt.slice(8,10) + '日'
 					new Note({
 						id:article.id,
 						level: article.level,
 						context: article.text,
-						time: article.createdAt
+						time: createDate
 					})
 				})
 				Event.fire('waterfall');
@@ -174,11 +177,12 @@ var NoteManager = (function(){
 			if(ret.status == 0){
 				//console.log('success')
 				$.each(ret.data, function(idx,article){
+					var createDate = article.createdAt.slice(0,4) + '年' + article.createdAt.slice(5,7) + '月' + article.createdAt.slice(8,10) + '日'
 					new Note({
 						id:article.id,
 						level: article.level,
 						context: article.text,
-						time: article.createdAt
+						time: createDate
 					})
 				})
 				Event.fire('waterfall');
