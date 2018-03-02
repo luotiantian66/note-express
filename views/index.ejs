@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>便利贴</title>
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_560519_h80zm0ciwb384cxr.css">	
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="shelter"></div>
+	<div class="box">
+		<div class="newtitle">添加新便签<span class="iconfont 
+			icon-close"></span>
+		</div>
+		<div class="newcontent">
+			<textarea name="" id="inputInfo" cols="48" rows="14" placeholder="输入内容"></textarea>
+		</div>
+		<div class="newlevel">
+			<span>重要星级：</span>
+			<span class="iconfont icon-star"></span>
+			<span class="iconfont icon-star"></span>
+			<span class="iconfont icon-star"></span>
+		</div>
+		<div class="addbtn">添加</div>
+	</div>
+	<header>
+		<div class="logo">在线便利贴</div>
+		<div class="function level">
+			选择<span class="iconfont icon-opt"></span>
+			<ul class="levelDetails">
+				<li>全选</li>
+				<li>一般</li>
+				<li>重要</li>
+				<li>紧急</li>
+			</ul>
+		</div>
+		<div class="function order">
+			排序<span class="iconfont icon-opt"></span>
+			<ul class="orderDetails">
+				<li>按时间升序</li>
+				<li>按时间降序</li>
+				<li>按重要程度升序</li>
+				<li>按重要程度降序</li>
+			</ul>
+		</div>
+		<% if (isLogin) { %> 	
+			<div class="userarea">
+				<img src="<%= user.avatar %>" >		
+				<div>
+					<span><%= user.username %></span>
+					<span> | </span>
+					<span><a href="/auth/logout">注销</a></span>
+				</div>
+			</div>
+		<%} else { %> 
+			<a href="/auth/github">
+				<div class="login">			
+					<span class="iconfont icon-github"></span>
+					Github登录
+				</div>
+			</a>
+		<%} %>
+		
+	
+		
+		
+	</header>
+	<main>
+		<div class="ct">
+			<!-- <div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content" contenteditable="true">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content" contenteditable="true">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+					这是一个便利贴，加油做毕设。
+					这是一个便利贴，加油做毕设。
+					这是一个便利贴，加油做毕设。这是一个便利贴，加油做毕设。
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊
+					这是一个便利贴，加油做毕设。
+					这是一个便利贴，加油做毕设。
+					这是一个便利贴，加油做毕设。
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div>
+			<div class="item">
+				<div class="title">
+					<span class="date">2018年1月18日</span>
+					<span class="iconfont icon-close"></span>
+				</div>
+				<div class="content">
+					这是一个便利贴，加油做毕设。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+				</div>
+				<div class="starlevel">
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+					<span class="iconfont icon-star"></span>
+				</div>
+				<div class="state">
+					<span>已完成</span>
+				</div>
+			</div> -->
+		</div>	
+	</main>
+	<% if (isLogin) { %> 	
+		<span class="iconfont icon-add"></span>
+	<%} else { %> 
+		<span class="iconfont icon-add logout"></span>
+	<%} %>
+	<span class="iconfont icon-top"></span>
+</body>
+<script src="/js/index.js"></script>
+</html>

@@ -1,0 +1,197 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+a {
+	text-decoration : none;
+	color:white;
+}
+ul {
+	margin-top: 10px;
+	list-style: none;
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+ul.active {
+	display: block;
+	background-color: rgba(26,205,154,0.2);
+}
+li {
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 18px;
+}
+li:nth-child(1) {
+	margin-top: 0;
+}
+li:hover {
+	background-color: rgba(26,205,154,0.4);
+}
+html,body {
+	height: 100%;
+	min-width:700px;
+}
+header {
+	height: 15%;
+	padding: 0 5%;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo {
+	font-weight: bold;
+	font-size: 30px;
+	color: #1acd9a;
+	cursor: pointer;
+}
+.function {
+	padding:10px 0;
+	text-align: center;
+	font-size: 18px;
+	color: #B0B0B0;
+	position: relative;
+	cursor: pointer;
+}
+.function:hover {
+	background-color: rgba(26,205,154,0.1);
+}
+.level,.levelDetails {
+	width: 145px;
+}
+.order,.orderDetails {
+	width: 145px;
+}
+.icon-opt {
+	position: absolute;
+	right: 10px;
+	/*float: right;*/
+}
+.login {
+	color: white;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #1acd9a;
+	cursor: pointer;
+}
+
+.userarea {
+	color: white;
+	padding: 10px;
+	border-radius: 25px;
+	background-color: #1acd9a;
+	cursor: pointer;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+img {
+	height:25px;
+	width:25px;
+	border-radius: 5px;
+	display: inline;
+	margin:0 4px;
+}
+.logout{
+	display: inline;
+}
+main {
+	padding: 5%;
+	height: 85%;
+	background-color: #f1f2f2;
+	overflow: scroll;
+	position: relative;
+}
+.ct {
+	position: relative;
+	width: 100%;
+	margin:0 auto;
+}
+
+
+.icon-add,.icon-top {
+	font-size: 25px;
+	position: absolute;
+	right: 5%;
+	padding: 15px;
+	margin: 15px;
+	border-radius: 35px;
+	background-color: #1acd9a;
+	cursor: pointer;
+}
+.icon-add {
+	bottom: 40px;	
+}
+.icon-top {
+	bottom: 100px;
+}
+.shelter {
+	background-color: rgba(230,230,250,0.8);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	display: none;
+}
+.box {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+	background-color: white;
+	border-radius: 5px;
+	display: none;
+}
+.box .newtitle {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	color: #828282;
+	padding: 10px 0;
+}
+.box .icon-close {
+	position: absolute;
+	right: 0.5em;
+}
+.box .newcontent {
+	text-align: center;
+}
+.box textarea {
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	background-color: #F5F5F5;
+	outline: none;
+	padding: 1em;
+	word-wrap:break-word;
+}
+.box .newlevel {
+	padding: 1em;
+	font-size: 16px;
+}
+.box .icon-star {
+	font-size: 16px;
+	color: #D3D3D3;
+	cursor: pointer;
+}
+.box .icon-star.active {
+	font-size: 16px;
+	color:#1acd9a;
+}
+.box .addbtn {
+	text-align: center;
+	margin:0 auto;
+	width: 40%;
+	padding: 8px 0;
+	font-size: 16px;
+	background-color: #1acd9a;
+	border-radius: 20px;
+	cursor: pointer;
+}
